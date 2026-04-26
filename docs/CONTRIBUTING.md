@@ -22,7 +22,9 @@ refactor/<short-description>
 docs/<short-description>
 ```
 
-### PR Template
+### PR Title and Template
+PR's title also should obey [conventional commit](https://www.conventionalcommits.org/) format.
+
 A [Pull Request template](../.github/pull_request_template.md) is provided in the repository.  
 Please follow it when creating a PR and fill in all relevant sections to make the review process easier.
 
