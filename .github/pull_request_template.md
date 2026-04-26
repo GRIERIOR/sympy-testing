@@ -1,13 +1,6 @@
 ## Description
 Provide a clear and concise description of what this PR does and why it is needed.
 
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Refactor
-- [ ] Documentation update
-- [ ] Other (please describe):
-
 ## Checklist
 - [ ] My code builds without errors
 - [ ] All tests pass
