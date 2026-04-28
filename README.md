@@ -1,7 +1,7 @@
-# Testowania biblioteki SymPy
+# Testing the SymPy Library
 
-## Opis projektu
-Celem projektu jest zaprojektowanie i implementacja uproszczonego systemu testowania OOB (Out Of The Box, czyli bez dodatkowej konfiguracji czy customizacji) dla Pythonowej biblioteki SymPy do obliczeń symbolicznych. 
+## Project Description
+The goal of this project is to design and implement a simplified Out-Of-The-Box (OOB) testing system for the Python symbolic mathematics library SymPy, requiring no additional configuration or customization.
 
-## Zakres
-Projekt obejmuje testy funkcjonalne, testy wydajnościowe oraz przygotowanie scenariuszy testów akceptacyjnych z zakresu róznych symbolicznych operacji matematycznych.  
+## Scope
+The project includes functional testing, performance testing (one of each type of test), and the preparation of acceptance test scenario covering various symbolic mathematical operations.
