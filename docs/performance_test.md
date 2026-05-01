@@ -3,7 +3,7 @@
 ### Outline
 
 **What is tested?**  
-Execution time of `sympy.solve` function on a fixed, representative set of equations, executed on a clean, out-of-the-box installation (same inputs across runs)
+Execution time of `sympy.solve` function on a fixed, representative set of large systems of equations, including real-world models such as electrical circuit system.
 
 **Why it is tested?**  
 The goal is to detect performance regressions between a stable release and the latest commit, under conditions identical to typical user environments.
