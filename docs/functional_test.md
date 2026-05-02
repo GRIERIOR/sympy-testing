@@ -40,3 +40,10 @@ Since `solve` is one of the most commonly used entry points, failures here direc
 | x - x = 1| solve(x - x - 1) | [] |
 | 0 = 0 | solve(0) | [] |
 | sqrt(x) = -1 | solve(sqrt(x) + 1, x) | [] |
+
+### Pass criterion:
+
+- All solutions satisfy original equations when substituted (exactly or via simplification to 0)  
+- No extraneous solutions are present  
+- All expected solutions are returned  
+- Output structure remains consistent with documented behavior  
