@@ -1,7 +1,5 @@
 ## Functional Test Scenario
 
-**File:** `tests/functional/test_solve_functional.py`
-
 ### Outline
 
 **What is being tested?**  
