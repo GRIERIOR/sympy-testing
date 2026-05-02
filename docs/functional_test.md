@@ -29,14 +29,14 @@ Since `solve` is one of the most commonly used entry points, failures here direc
 
 ### Test cases
 
-| Case | Expected result |
-|----------|----------------|
-| solve(x + 2, x) | [-2] |
-| solve(3*x - 9, x) | [3] |
-| solve(x**2 - 4, x) | [-2, 2] |
-| solve(x**2 + 1, x) | [-I, I] |
-| solve([x + y - 2, x - y], [x, y]) | {x: 1, y: 1} |
-| solve([2*x + y - 1, x - y], [x, y]) | {x: 1/3, y: 1/3} |
-| solve(x - x - 1) | [] (no solution) |
-| solve(0) | [] (no solution) |
-| solve(sqrt(x) + 1, x) | [] (no solution) |
+| Equation | Case | Expected result |
+|--------|----------|----------------|
+| x = -2 | solve(x + 2, x) | [-2] |
+| 3x = 9 | solve(3*x - 9, x) | [3] |
+| x**2 = 4| solve(x**2 - 4, x) | [-2, 2] |
+| x**2 = -1| solve(x**2 + 1, x) | [-I, I] |
+| {x + y = 2; x = y} | solve([x + y - 2, x - y], [x, y]) | {x: 1, y: 1} |
+| {2x + y = 1; x = y} | solve([2*x + y - 1, x - y], [x, y]) | {x: 1/3, y: 1/3} |
+| x - x = 1| solve(x - x - 1) | [] |
+| 0 = 0 | solve(0) | [] |
+| sqrt(x) = -1 | solve(sqrt(x) + 1, x) | [] |
