@@ -24,3 +24,19 @@ Since `solve` is one of the most commonly used entry points, failures here direc
 
 **Function under test:**  
 `sympy.solve`
+
+---
+
+### Test cases
+
+| Case | Expected result |
+|----------|----------------|
+| solve(x + 2 = 0) | [-2] |
+| solve(3*x - 9 = 0) | [3] |
+| solve(x**2 - 4 = 0) | [-2, 2] |
+| solve(x**2 + 1 = 0) | [-I, I] |
+| solve([x + y - 2, x - y], [x, y]) | {x: 1, y: 1} |
+| solve([2*x + y - 1, x - y], [x, y]) | {x: 1/3, y: 1/3} |
+| solve(x - x - 1) | [] (no solution) |
+| solve(0) | Infinite solutions (empty list or symbolic form depending on API) |
+| sqrt(x) = -1 | No invalid solutions returned |
