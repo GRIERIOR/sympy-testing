@@ -38,5 +38,5 @@ Since `solve` is one of the most commonly used entry points, failures here direc
 | solve([x + y - 2, x - y], [x, y]) | {x: 1, y: 1} |
 | solve([2*x + y - 1, x - y], [x, y]) | {x: 1/3, y: 1/3} |
 | solve(x - x - 1) | [] (no solution) |
-| solve(0) | Infinite solutions (empty list or symbolic form depending on API) |
+| solve(0) | [] (no solution) |
 | sqrt(x) = -1 | No invalid solutions returned |
