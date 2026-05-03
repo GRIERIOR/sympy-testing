@@ -39,12 +39,12 @@ Since `solve` is one of the most commonly used entry points, failures here direc
 | $\sqrt{x} = -1$ | `solve(sqrt(x) + 1, x)` | `[]` |
 
 ### Symbolic test cases
-| Equation | Case | Expected result |
-|----------|------|-----------------|
-| $ax+b=0$ | `solve(a*x + b, x)` | `[-b/a]` |
-| $ax^2+bx+c=0$ | `solve(a*x**2 + b*x + c, x)` | `[(-b - sqrt(-4*a*c + b**2))/(2*a), (-b + sqrt(-4*a*c + b**2))/(2*a)]` |
-| $xe^x=a$ | `solve(x*e**x - a, x)` | `[LambertW(a)]` |
-| $\frac{3ax+b}{9}=\frac{x}{3}+\frac{b}{3}$ | `solve((3*x*a + b)/9 - x*a/3 - b/3, x)` | `[]` |
+| Equation | Case |
+|----------|------|
+| $$ax + b = 0$$ | `solve(a*x + b, x)` |
+| $$ax^2 + bx + c = 0$$ | `solve(a*x**2 + b*x + c, x)` |
+| $$x e^x = a$$ | `solve(x*e**x - a, x)` |
+| $$\frac{3ax + b}{9} = \frac{x}{3} + \frac{b}{3}$$ | `solve((3*x*a + b)/9 - x*a/3 - b/3, x)` |
 
 **Complex real-life case**
 
@@ -63,26 +63,6 @@ solve([
     -R2*I1 + (R2 + R3 + R4)*I2 - R4*I3,
     -R4*I2 + (R4 + R5)*I3 + V2
 ], [I1, I2, I3])
-```
-
-Expected result:
-```
-{
-I1: V1*(R2 + R3 + R4)*(R4 + R5) + R2*V2*(R4 + R5)
-     / ((R1 + R2)*(R2 + R3 + R4)*(R4 + R5)
-        - R2**2*(R4 + R5)
-        - R4**2*(R1 + R2)),
-
-I2: V1*(R4 + R5) - R2*R4*V2
-     / ((R1 + R2)*(R2 + R3 + R4)*(R4 + R5)
-        - R2**2*(R4 + R5)
-        - R4**2*(R1 + R2)),
-
-I3: R2*R4*V1 + (R1 + R2)*(R2 + R3 + R4)*V2
-     / ((R1 + R2)*(R2 + R3 + R4)*(R4 + R5)
-        - R2**2*(R4 + R5)
-        - R4**2*(R1 + R2))
-}
 ```
 
 ### Pass criterion:
