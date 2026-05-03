@@ -19,7 +19,6 @@ The goal is to catch regressions such as:
 
 Since `solve` is one of the most commonly used entry points, failures here directly translate to the perception that the library is unreliable, even if other parts remain functional.
 
-
 **Function under test:**  
 `sympy.solve`
 
