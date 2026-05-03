@@ -67,7 +67,11 @@ solve([
 
 ### Pass criterion:
 
+General:
+- Output structure remains consistent with documented behavior 
+
+For numeric test cases:
+- The returned solutions match the expected result up to mathematical equivalence.
+
+For symbolic test cases:
 - All solutions satisfy original equations when substituted (using `expr.subs()` from sympy)
-- No extraneous solutions are present
-- All expected solutions are returned
-- Output structure remains consistent with documented behavior  
