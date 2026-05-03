@@ -88,7 +88,7 @@ I3: R2*R4*V1 + (R1 + R2)*(R2 + R3 + R4)*V2
 
 ### Pass criterion:
 
-- All solutions satisfy original equations when substituted (exactly or via simplification to 0)  
-- No extraneous solutions are present  
-- All expected solutions are returned  
+- All solutions satisfy original equations when substituted (using `expr.subs()` from sympy)
+- No extraneous solutions are present
+- All expected solutions are returned
 - Output structure remains consistent with documented behavior  
