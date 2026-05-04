@@ -35,12 +35,9 @@ Avoid mixing unrelated changes in a single PR.
 Large PRs are acceptable only when justified (e.g. major refactor, architectural change), but should still be well described and structured.
 
 ## Issues
-Issue templates are available [here](../.github/ISSUE_TEMPLATE/). 
+This repository provides only one issue template - [bug report](../.github/ISSUE_TEMPLATE/bug_report.md) 
 
-This repository provides two issue templates.  
-Please choose the appropriate one and provide all required information.
-
-Core team members may create issues outside of templates for internal tasks or quick TODOs.  
+Core team members may create issues outside of this template for internal tasks or quick TODOs.  
 Such issues should be clearly labeled (e.g. `chore`, `todo`) and kept concise.
 
-Whenever possible, prefer using existing templates to maintain consistency.
+As this is a limited scope and finite project, there is no way to request a feature.
