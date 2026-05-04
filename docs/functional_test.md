@@ -75,3 +75,17 @@ For numeric test cases:
 
 For symbolic test cases:
 - All solutions satisfy original equations when substituted (using `simplify(equation.subs(solution)) == 0` from sympy).
+
+**EXCEPTION**
+
+Test case `solve(x*e**x - a, x)`
+
+Known limination of sympy.simplify forces usage of direct
+comparison of solution to the expected result.
+
+Using  `sympy.simplify` here causes false negative
+as it is unable to simplify $W(a)e^{W(a)}=a$,
+hence it is unable to simplify $W(a)e^{W(a)} - a = 0$,
+causing the test to be failed.
+
+Therefore, pass criterion for this test is to check if solution is exactly `LambertW(a)` (it is expected symbolic result and it is unambiguos).

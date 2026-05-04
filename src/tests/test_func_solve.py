@@ -1,5 +1,5 @@
 import pytest
-from sympy import Rational, symbols, Eq, sqrt, I, exp, simplify
+from sympy import Rational, symbols, Eq, sqrt, I, exp, simplify, LambertW
 from sympy import solve
 
 # Common symbols
@@ -133,7 +133,7 @@ def test_transcendental():
     # Expect LambertW form
     assert len(sol) >= 1
     for s in sol:
-        assert_solution_satisfies(x * exp(x) - a, x, s)
+        assert s == LambertW(a)
 
 
 def test_fraction_equation():
