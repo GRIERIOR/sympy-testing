@@ -38,3 +38,9 @@ Install dependencies:
 ```
 pip install -r requirements.txt
 ```
+
+## Usage
+To run the project, simply activate the virtual environement as during installation. Then run:
+```
+pytest -v
+```
