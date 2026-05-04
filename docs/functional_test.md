@@ -74,4 +74,4 @@ For numeric test cases:
 - The returned solutions match the expected result up to mathematical equivalence.
 
 For symbolic test cases:
-- All solutions satisfy original equations when substituted (using `expr.subs()` from sympy).
+- All solutions satisfy original equations when substituted (using `simplify(equation.subs(solution)) == 0` from sympy).
