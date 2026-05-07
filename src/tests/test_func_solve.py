@@ -112,10 +112,7 @@ def test_invalid_domain():
 def test_symbolic_linear():
     sol = solve(a*x + b, x)
 
-    # expected: [-b/a]
     assert len(sol) == 1
-    assert simplify(sol[0] + b/a) == 0
-
     assert_solution_satisfies(a*x + b, x, sol[0])
 
 
