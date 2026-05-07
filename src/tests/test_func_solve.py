@@ -42,67 +42,49 @@ def assert_system_solution_satisfies(eqs, sol_dict):
 # Numeric tests
 # -------------------------
 
-def test_linear_simple():
-    sol = solve(x + 2, x)
-    assert_solutions_match(sol, [-2])
+@pytest.mark.parametrize(
+    "expr, var, expected",
+    [
+        (x + 2, x, [-2]),
+        (3*x - 9, x, [3]),
+        (x**2 - 4, x, [-2, 2]),
+        (x**2 + 1, x, [-I, I]),
+    ]
+)
+def test_single_equations(expr, var, expected):
+    sol = solve(expr, var)
+    assert_solutions_match(sol, expected)
     for s in sol:
-        assert_solution_satisfies(x + 2, x, s)
+        assert_solution_satisfies(expr, var, s)
 
 
-def test_linear_scaled():
-    sol = solve(3*x - 9, x)
-    assert_solutions_match(sol, [3])
-    for s in sol:
-        assert_solution_satisfies(3*x - 9, x, s)
-
-
-def test_quadratic_real():
-    sol = solve(x**2 - 4, x)
-    assert_solutions_match(sol, [-2, 2])
-    for s in sol:
-        assert_solution_satisfies(x**2 - 4, x, s)
-
-
-def test_quadratic_complex():
-    sol = solve(x**2 + 1, x)
-    assert_solutions_match(sol, [-I, I])
-    for s in sol:
-        assert_solution_satisfies(x**2 + 1, x, s)
-
-
-def test_linear_system_1():
-    eqs = [x + y - 2, x - y]
-    sol = solve(eqs, [x, y])
+@pytest.mark.parametrize(
+    "eqs, vars_, expected",
+    [
+        ([x + y - 2, x - y], [x, y], {x: 1, y: 1}),
+        ([2*x + y - 1, x - y], [x, y], {x: Rational(1, 3), y: Rational(1, 3)}),
+    ]
+)
+def test_linear_systems(eqs, vars_, expected):
+    sol = solve(eqs, vars_)
 
     assert isinstance(sol, dict), f"Expected dict, got {type(sol)}"
-    assert sol == {x: 1, y: 1}
+    assert sol == expected
 
     assert_system_solution_satisfies(eqs, sol)
 
 
-def test_linear_system_2():
-    eqs = [2*x + y - 1, x - y]
-    sol = solve(eqs, [x, y])
-
-    assert isinstance(sol, dict), f"Expected dict, got {type(sol)}"
-    assert sol == {x: Rational(1, 3), y: Rational(1, 3)}
-
-    assert_system_solution_satisfies(eqs, sol)
-
-
-def test_no_solution():
-    sol = solve(x - x - 1)
-    assert sol == [], f"Expected [], got {sol}"
-
-
-def test_identity_equation():
-    sol = solve(0)
-    assert sol == [], f"Expected [], got {sol}"
-
-
-def test_invalid_domain():
-    sol = solve(sqrt(x) + 1, x)
-    assert sol == [], f"Expected [], got {sol}"
+@pytest.mark.parametrize(
+    "expr, var, expected",
+    [
+        (x - x - 1, x, []),
+        (0, x, []),
+        (sqrt(x) + 1, x, []),
+    ]
+)
+def test_no_solution(expr, var, expected):
+    sol = solve(expr, var)
+    assert sol == expected, f"Expected {expected}, got {sol}"
 
 
 # -------------------------

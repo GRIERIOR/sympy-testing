@@ -34,8 +34,8 @@ Since `solve` is one of the most commonly used entry points, failures here direc
 | $x^2 = -1$ | `solve(x**2 + 1, x)` | `[-I, I]` |
 | $x + y = 2,\; x = y$ | `solve([x + y - 2, x - y], [x, y])` | `{x: 1, y: 1}` |
 | $2x + y = 1,\; x = y$ | `solve([2*x + y - 1, x - y], [x, y])` | `{x: 1/3, y: 1/3}` |
-| $x - x = 1$ | `solve(x - x - 1)` | `[]` |
-| $0 = 0$ | `solve(0)` | `[]` |
+| $x - x = 1$ | `solve(x - x - 1, x)` | `[]` |
+| $0 = 0$ | `solve(0, x)` | `[]` |
 | $\sqrt{x} = -1$ | `solve(sqrt(x) + 1, x)` | `[]` |
 
 ### Symbolic test cases
