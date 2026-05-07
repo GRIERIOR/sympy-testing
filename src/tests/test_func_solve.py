@@ -75,15 +75,15 @@ def test_linear_systems(eqs, vars_, expected):
 
 
 @pytest.mark.parametrize(
-    "expr, expected",
+    "expr, var, expected",
     [
-        (x - x - 1, []),
-        (0, []),
-        (sqrt(x) + 1, []),
+        (x - x - 1, x, []),
+        (0, x, []),
+        (sqrt(x) + 1, x, []),
     ]
 )
-def test_no_solution(expr, expected):
-    sol = solve(expr)
+def test_no_solution(expr, var, expected):
+    sol = solve(expr, var)
     assert sol == expected, f"Expected {expected}, got {sol}"
 
 
