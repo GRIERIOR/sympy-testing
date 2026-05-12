@@ -3,7 +3,7 @@
 ### Outline
 
 **What is tested?**  
-Execution time of `sympy.solve` function on a fixed, representative set of large systems of equations, including real-world models such as electrical circuit systems.
+Execution time of `sympy.solve` function on a fixed, representative set of large systems of equations, including real-world models such as electrical circuit system.
 
 **Why it is tested?**  
 The goal is to detect performance regressions between a stable release and the latest commit, under conditions identical to typical user environments.
@@ -38,9 +38,7 @@ The external pipeline is responsible for:
 
 ### Input Data
 
-The benchmark uses a set of fixed symbolic system designed to produce a computationally expensive workload for `sympy.solve`.
-
-The system must remain unchanged between benchmark runs.
+The benchmark uses a set of fixed symbolic systems designed to produce a computationally expensive workload for `sympy.solve`.
 
 ---
 
@@ -77,11 +75,9 @@ Equations:
 ---
 
 The benchmark implementation:
-- executes this exact system in every benchmark run,
+- executes those exact systems in every benchmark run,
 - uses identical variable ordering,
-- avoids any randomized modifications.
-
-This system is intentionally computationally expensive in order to expose symbolic solving performance regressions between SymPy versions. Because if a benchmark finishes instantly, developers inevitably declare victory and go home before the real problems even wake up.
+- avoids any randomised modifications.
 
 ---
 
