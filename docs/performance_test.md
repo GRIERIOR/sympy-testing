@@ -38,27 +38,41 @@ The external pipeline is responsible for:
 
 ### Input Data
 
-The benchmark uses a single fixed symbolic system designed to produce a computationally expensive workload for `sympy.solve`.
+The benchmark uses a set of fixed symbolic system designed to produce a computationally expensive workload for `sympy.solve`.
 
 The system must remain unchanged between benchmark runs.
 
 ---
 
-#### Dataset 1 — Large Nonlinear Symbolic Polynomial System
+#### Dataset 1 — Large nonlinear polynomial system
 
 Equations:
 
-```[
-x1**3 + x2**2 + x3*x4 - x5 + x6 - x7 + x8 - 15,
-x1*x2 + x2**3 - x3 + x4**2 + x5 - x6 + x7 - x8 - 10,
-x1**2 + x2*x3 + x3**3 - x4 + x5**2 - x6 + x7 - x8 - 20,
-x1*x4 + x2**2 - x3 + x4**3 + x5 - x6**2 + x7 - x8 - 5,
-x1 - x2 + x3*x5 + x4**2 + x5**3 - x6 + x7**2 - x8 - 12,
-x1**2 - x2 + x3 - x4*x6 + x5**2 + x6**3 - x7 + x8 - 18,
-x1*x7 - x2**2 + x3 + x4 - x5 + x6*x7 + x7**3 - x8 - 25,
-x1 - x2*x8 + x3**2 - x4 + x5 + x6 - x7 + x8**3 - 30
+```
+[
+    x1**3 + x2**2 + x3*x4 - x5 + x6 - x7 + x8 - 15,
+    x1*x2 + x2**3 - x3 + x4**2 + x5 - x6 + x7 - x8 - 10,
+    x1**2 + x2*x3 + x3**3 - x4 + x5**2 - x6 + x7 - x8 - 20,
+    x1*x4 + x2**2 - x3 + x4**3 + x5 - x6**2 + x7 - x8 - 5,
+    x1 - x2 + x3*x5 + x4**2 + x5**3 - x6 + x7**2 - x8 - 12,
+    x1**2 - x2 + x3 - x4*x6 + x5**2 + x6**3 - x7 + x8 - 18,
+    x1*x7 - x2**2 + x3 + x4 - x5 + x6*x7 + x7**3 - x8 - 25,
+    x1 - x2*x8 + x3**2 - x4 + x5 + x6 - x7 + x8**3 - 30
 ]
 ```
+
+#### Dataset 2 — Exponential nonlinear system
+
+Equations:
+
+```
+[
+    exp(x1) + x4 + x3,
+    exp(x2**2) - exp(x3),
+    exp(-x3) + 2*x1**2
+]
+```
+
 
 ---
 
