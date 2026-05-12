@@ -8,14 +8,9 @@ Execution time of `sympy.solve` function on a fixed, representative set of large
 **Why it is tested?**  
 The goal is to detect performance regressions between a stable release and the latest commit, under conditions identical to typical user environments.
 
-In a library like SymPy:
-- internal changes can degrade performance without breaking correctness  
-- such regressions are not caught by functional tests  
-- users experience slowdown immediately after upgrade  
+In a library like SymPy internal changes can degrade performance without breaking correctness. Such regressions are not caught by functional tests and users experience slowdown immediately after upgrade.
 
-This test provides a consistent baseline to compare:
-- reference version vs version under test  
-- without interference from local optimizations or configuration differences  
+This test provides a consistent baseline to compare reference version vs version under test without interference from local optimizations or configuration differences.
 
 **Metric**  
 execution time (relative comparison between versions, not a fixed threshold)
@@ -26,8 +21,8 @@ execution time (relative comparison between versions, not a fixed threshold)
 
 The performance testing pipeline is controlled externally and operates by executing this benchmark twice:
 
-- once for a **reference SymPy version**
-- once for a **version under test**
+- once for a reference SymPy version
+- once for a version under test
 
 The benchmark itself is identical in both runs and does not contain any comparison logic.
 
@@ -67,10 +62,10 @@ x1 - x2*x8 + x3**2 - x4 + x5 + x6 - x7 + x8**3 - 30
 
 ---
 
-The benchmark implementation must:
-- execute this exact system in every benchmark run,
-- use identical variable ordering,
-- avoid any randomized modifications.
+The benchmark implementation:
+- executes this exact system in every benchmark run,
+- uses identical variable ordering,
+- avoids any randomized modifications.
 
 This system is intentionally computationally expensive in order to expose symbolic solving performance regressions between SymPy versions. Because if a benchmark finishes instantly, developers inevitably declare victory and go home before the real problems even wake up.
 
@@ -84,19 +79,12 @@ The benchmark must be executed:
 - with identical benchmark configuration,
 - without unrelated heavy background workload when possible.
 
-The benchmark uses:
-- locally installed SymPy versions installed with `pip`,
-- `pytest`,
-- `pytest-benchmark`.
-
 ---
 
 ### Pass criteria
 
 The benchmark result is evaluated externally by the benchmark pipeline, which executes this test in two runs (reference and target) and compares the results.
 
-The test passes if execution time remains within the allowed regression threshold when comparing:
-- reference run output  
-- target run output  
+The test passes if execution time remains within the allowed regression threshold when comparing reference run output with the target run output
 
 No comparison logic is implemented inside the test itself.
