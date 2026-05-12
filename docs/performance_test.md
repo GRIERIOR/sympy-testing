@@ -51,7 +51,7 @@ Equations:
     x1**3 - x5 - a, x2**3 - x1**6 - a,
     x3**3 - x2**9 - a,
     x4**3 - x1**6 - a
-    ]
+]
 ```
 
 #### Dataset 2 — Exponential nonlinear system
